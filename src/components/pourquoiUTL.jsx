@@ -64,17 +64,17 @@ export default function PourquoiUTL() {
           {/* Images */}
           <div data-aos="fade-left" className="grid grid-cols-2 gap-4">
             <img
-              src="/src/assets/images/nathan-dumlao-ewGMqs2tmJI-unsplash.jpg"
+              src="//src/assets/images/nathan-dumlao-ewGMqs2tmJI-unsplash.jpg"
               alt="étudiants"
               className="rounded-lg shadow-md object-cover h-40 w-full"
             />
             <img
-              src="/src/assets/images/drahomir-hugo-posteby-mach-n4y3eiQSIoc-unsplash.jpg"
+              src="//src/assets/images/drahomir-hugo-posteby-mach-n4y3eiQSIoc-unsplash.jpg"
               alt="laboratoire"
               className="rounded-lg shadow-md object-cover h-40 w-full"
             />
             <img
-              src="/src/assets/images/dom-fou-YRMWVcdyhmI-unsplash.jpg"
+              src="//src/assets/images/dom-fou-YRMWVcdyhmI-unsplash.jpg"
               alt="amphithéâtre"
               className="rounded-lg shadow-md object-cover h-40 w-full col-span-2"
             />
