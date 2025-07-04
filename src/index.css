@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+::root{
+  --color-primary: #3b82f6;
+  --color-secondary: #fbbf24;
+  --color-accent: #ef4444;
+  --text-color:#1f2937;
+  --background-color: #f3f4f6;
+  --border-color: #e5e7eb;
+  --text-prince:#000000;
+    --text-second: #2f2f2f;
+    --br-icon:#d9d9d9;
+    --blur:rgba(16, 8, 8, 0.1);
+}
+text{
+  color: var(--text-color);
+}
