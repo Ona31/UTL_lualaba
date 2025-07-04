@@ -96,10 +96,10 @@ export default function NavBar() {
           <img src={logo} alt="Logo" className="h-12 w-12" />
           <h1
             className={`text-lg font-bold ml-3 ${
-              windowWidth < 768 ? 'text-white' : 'text-gray-700'
+              windowWidth < 768 ? 'text-white': 'text-gray-700'
             }`}
           >
-            Université Technologique du Lualaba
+           {windowWidth < 768 ? 'UTL_Lualaba' : 'Université Technologique du Lualaba'}
           </h1>
         </div>
 
