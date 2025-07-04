@@ -8,16 +8,23 @@ import {
   faBars,
   faTimes,
 } from '@fortawesome/free-solid-svg-icons';
-import logo from '../assets/Logo_UTL/logo_UTL.webp'; // Assurez-vous que le chemin est correct
+import logo from '../assets/Logo_UTL/logo.png'; // Vérifie le chemin exact
 
 export default function NavBar() {
   const [showAboutDropdown, setShowAboutDropdown] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const handleLinkClick = () => {
     setMobileMenuOpen(false);
     setShowAboutDropdown(false);
   };
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   // SVG techno pattern en jaune/orangé (#fbbf24 = jaune Tailwind)
   const technoPatternSvg = encodeURIComponent(`
@@ -26,7 +33,8 @@ export default function NavBar() {
       <path d="M0 20 L40 20" />
       <path d="M20 0 L20 40" />
       <circle cx="20" cy="20" r="3" />
-    </svg>`);
+    </svg>
+  `);
 
   // Style fond dégradé + texture techno jaune/orangé (pour la barre haute)
   const technoBarStyle = {
@@ -40,9 +48,9 @@ export default function NavBar() {
 
   return (
     <header className="fixed w-full z-50 top-0 left-0 shadow-md">
-      {/* Barre du haut : ici fond techno dégradé même en desktop */}
+      {/* Barre du haut desktop, cachée en mobile */}
       <div
-        className="flex justify-between items-center border-b border-gray-700 px-8 md:px-28 py-2 text-sm font-semibold"
+        className="hidden md:flex justify-between items-center border-b border-gray-700 px-8 md:px-28 py-2 text-sm font-semibold"
         style={technoBarStyle}
       >
         <div className="flex items-center space-x-6">
@@ -78,16 +86,19 @@ export default function NavBar() {
         </div>
       </div>
 
-      {/* Logo + menu principal : fond blanc classique */}
-      <div className="flex items-center justify-between px-6 md:px-28 py-4 bg-white">
+      {/* Logo + menu principal : fond blanc desktop, fond techno en mobile */}
+      <div
+        className="flex items-center justify-between px-6 md:px-28 py-4"
+        style={windowWidth < 768 ? technoBarStyle : { backgroundColor: 'white' }}
+      >
         {/* Logo + nom */}
         <div className="flex items-center">
-          <img
-            src={logo}
-            alt="Logo"
-            className="h-12 w-12"
-          />
-          <h1 className="text-lg font-bold text-gray-700 ml-3">
+          <img src={logo} alt="Logo" className="h-12 w-12" />
+          <h1
+            className={`text-lg font-bold ml-3 ${
+              windowWidth < 768 ? 'text-white' : 'text-gray-700'
+            }`}
+          >
             Université Technologique du Lualaba
           </h1>
         </div>
@@ -175,7 +186,7 @@ export default function NavBar() {
         {/* Bouton hamburger mobile */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden text-gray-700 focus:outline-none"
+          className="md:hidden text-white focus:outline-none"
           aria-label="Menu"
         >
           <FontAwesomeIcon icon={mobileMenuOpen ? faTimes : faBars} size="lg" />
@@ -185,6 +196,28 @@ export default function NavBar() {
       {/* Menu mobile déroulant */}
       {mobileMenuOpen && (
         <nav className="md:hidden bg-white shadow-md border-t border-gray-200 px-6 pb-6">
+          {/* Barre haute déplacée ici en mobile */}
+          <div className="flex flex-col space-y-3 mb-6 text-yellow-400 font-semibold text-sm">
+            <a href="mailto:utl@gmail.com" className="flex items-center hover:text-yellow-300">
+              <FontAwesomeIcon icon={faEnvelope} className="mr-2" />
+              utl@gmail.com
+            </a>
+            <a href="/" className="flex items-center hover:text-yellow-300">
+              <FontAwesomeIcon icon={faLocationDot} className="mr-2" />
+              Congo Kinshasa, Lualaba, Kolwezi
+            </a>
+            <a href="/connexion" className="flex items-center hover:text-yellow-300">
+              <FontAwesomeIcon icon={faUser} className="mr-2" />
+              Connexion
+            </a>
+            <a
+              href="/contact"
+              className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-full shadow-md w-max"
+            >
+              Nous Contacter
+            </a>
+          </div>
+
           <ul className="flex flex-col space-y-4 font-bold text-gray-800 text-base">
             <li>
               <a href="/" onClick={handleLinkClick} className="block hover:text-yellow-500">
