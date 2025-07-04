@@ -3,6 +3,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import im1 from '../assets/images/nathan-dumlao-ewGMqs2tmJI-unsplash.jpg';
+import im2 from '../assets/images/drahomir-hugo-posteby-mach-n4y3eiQSIoc-unsplash.jpg';
+import im3 from '../assets/images/dom-fou-YRMWVcdyhmI-unsplash.jpg';
 
 export default function PourquoiUTL() {
   useEffect(() => {
@@ -64,17 +67,17 @@ export default function PourquoiUTL() {
           {/* Images */}
           <div data-aos="fade-left" className="grid grid-cols-2 gap-4">
             <img
-              src="//src/assets/images/nathan-dumlao-ewGMqs2tmJI-unsplash.jpg"
+              src={im1}
               alt="étudiants"
               className="rounded-lg shadow-md object-cover h-40 w-full"
             />
             <img
-              src="//src/assets/images/drahomir-hugo-posteby-mach-n4y3eiQSIoc-unsplash.jpg"
+              src={im2}
               alt="laboratoire"
               className="rounded-lg shadow-md object-cover h-40 w-full"
             />
             <img
-              src="//src/assets/images/dom-fou-YRMWVcdyhmI-unsplash.jpg"
+              src={im3}
               alt="amphithéâtre"
               className="rounded-lg shadow-md object-cover h-40 w-full col-span-2"
             />

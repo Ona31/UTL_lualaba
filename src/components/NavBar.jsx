@@ -8,6 +8,7 @@ import {
   faBars,
   faTimes,
 } from '@fortawesome/free-solid-svg-icons';
+import logo from '../assets/Logo_UTL/logo_UTL.webp'; // Assurez-vous que le chemin est correct
 
 export default function NavBar() {
   const [showAboutDropdown, setShowAboutDropdown] = useState(false);
@@ -82,7 +83,7 @@ export default function NavBar() {
         {/* Logo + nom */}
         <div className="flex items-center">
           <img
-            src="/src/assets/Logo_UTL/logo_UTL.webp"
+            src={logo}
             alt="Logo"
             className="h-12 w-12"
           />
