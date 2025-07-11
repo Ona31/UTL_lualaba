@@ -19,7 +19,7 @@ export default function HomePage() {
 
   return (
     <>
- <section className="relative min-h-screen bg-[url('/src/assets/images/vadim-sherbakov-d6ebY-faOO0-unsplash.jpg')] bg-cover bg-center text-white">
+ <section className="relative min-h-screen bg-[url('/src/assets/images/45830726-d913-43f2-a198-5666c55ede39.jpg.webp')] bg-cover bg-center text-white">
   {/* Overlay noir semi-transparent */}
   <div className="absolute inset-0 bg-black/20"></div>
 

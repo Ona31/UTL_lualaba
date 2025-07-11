@@ -5,7 +5,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import im1 from '../assets/images/nathan-dumlao-ewGMqs2tmJI-unsplash.jpg';
 import im2 from '../assets/images/drahomir-hugo-posteby-mach-n4y3eiQSIoc-unsplash.jpg';
-import im3 from '../assets/images/dom-fou-YRMWVcdyhmI-unsplash.jpg';
+import im3 from 'http://utlualaba.com/wp-content/uploads/2025/05/IMG_4507-2.jpg';
 
 export default function PourquoiUTL() {
   useEffect(() => {

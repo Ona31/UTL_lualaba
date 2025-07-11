@@ -99,7 +99,7 @@ export default function NavBar() {
               windowWidth < 768 ? 'text-white': 'text-gray-700'
             }`}
           >
-           {windowWidth < 768 ? 'UTL_Lualaba' : 'Université Technologique du Lualaba'}
+           {windowWidth < 768 ? 'U.T Lualaba' : 'U.T Lualaba'}
           </h1>
         </div>
 
