@@ -145,16 +145,8 @@ export default function NavBar() {
                 Programmes
               </a>
             </li>
-            <li>
-              <a href="/contact" className="hover:text-yellow-500">
-                Recherches
-              </a>
-            </li>
-            <li>
-              <a href="/blog" className="hover:text-yellow-500">
-                Vie
-              </a>
-            </li>
+            
+            
             <li>
               <a href="/gallery" className="hover:text-yellow-500">
                 Admission
